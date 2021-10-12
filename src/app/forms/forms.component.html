@@ -1,0 +1,70 @@
+<form #f="ngForm" (ngSubmit)="submit(f)">
+  <div class="firstName">
+    <label for="firstName"><b>First Name</b></label>
+    <input required minlength="3" maxlength="25" ngModel name="firstName" #firstName="ngModel" (change)="log(firstName)" id="firstName" type="text" class="form-control">
+   <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+     <div *ngIf="firstName.errors.required">First Name is required</div>
+     <div *ngIf="firstName.errors.minlength">First Name should be min 3 characters</div>
+     <div *ngIf="firstName.errors.maxlength">First Name should be max of 25 characters</div>
+   </div>
+  </div><br>
+  <div class="form-group">
+    <label for="lastName"><b>Last Name</b></label>
+    <input required minlength="3" maxlength="25" ngModel name="lastName" #lastName ="ngModel" (change)="log(lastName)" id="lastName" type="text" class="form-control">
+    <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid">
+      <div *ngIf="lastName.errors.required">Last Name is required</div>
+     <div *ngIf="lastName.errors.minlength">Last  Name should be min 3 characters</div>
+     <div *ngIf="lastName.errors.maxlength">Last  Name should be max of 25 characters</div>
+  </div><br>
+  <div class="form-group">
+    <label for="mail"><b>Email</b></label>
+    <input required minlength="3"  ngModel name="mail" #mail ="ngModel" (change)="log(mail)" id="mail" type="text" class="form-control">
+    <div class="alert alert-danger" *ngIf="mail.touched && !mail.valid">
+      <div *ngIf="mail.errors.required">Email is required</div>
+     <div *ngIf="mail.errors.minlength">Email should have minimum 3 characters</div>
+    </div>
+  </div><br>
+  <div class="form-group">
+    <label for="pass"><b>Password</b></label>
+    <input required minlength="3" maxlength="50"  ngModel name="pass" #pass ="ngModel" (change)="log(pass)" id="pass" type="text" class="form-control">
+    <div class="alert alert-danger" *ngIf="pass.touched && !pass.valid">
+      <div *ngIf="pass.errors.required">Password is required</div>
+     <div *ngIf="pass.errors.minlength">Password  should have minimum 3 characters</div>
+     <div *ngIf="pass.errors.maxlength">Password should be max of 50 characters</div>
+    </div>
+  </div><br>
+  <div class="form-group">
+    <label for="birth"><b>Date of Birth</b></label>
+    <input required  ngModel name="birth" #birth ="ngModel" (change)="log(birth)" id="birth" type="date" class="form-control">
+    <div class="alert alert-danger" *ngIf="birth.touched && !birth.valid">
+      <div *ngIf="birth.errors.required">Date of Birth not mentioned or  it is invalid!!! </div>
+    </div>
+  </div><br>
+  <div class="form-group">
+    <label for="join"><b>Date of Joining</b></label>
+    <input required  ngModel name="join" #join="ngModel" (change)="log(join)" id="join" type="date" class="form-control">
+    <div class="alert alert-danger" *ngIf="birth.touched && !birth.valid">
+      <div *ngIf="join.errors.required">Date of Birth not mentioned or  it is invalid!!! </div>
+    </div>
+  </div><br>
+  <div class="form-group">
+    <label for="roleBased"><b>Role</b></label>
+    <select name="roleBased" id="roleBased" class="form-control">
+      <option>---</option>
+      <option value="">Admin</option>
+      <option value="">Employee</option>
+    </select>
+  </div><br>
+  <div class="form-group">
+    <label for="dept">Department</label>
+    <select name="dept" id="dept" class="form-control">
+      <option>---</option>
+      <option value="">Admistration and HR</option>
+      <option value="">Finance</option>
+      <option value="">Development</option>
+      <option value="">Tech Support</option>
+    </select>
+  </div><br>
+  <button class="btn btn-primary" [disabled]="!f.valid">submit</button>
+  </div>
+</form>

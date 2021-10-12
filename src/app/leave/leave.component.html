@@ -1,0 +1,16 @@
+<form action="">
+  <div class="form-group">
+    <label for="start"><b>Leave From</b></label>
+    <input required  ngModel name="start" #start="ngModel" (change)="lea(start)" id="start" type="date" class="form-control">
+   <div class="alert alert-danger" *ngIf="start.touched && !start.valid">
+     <div *ngIf="start.errors.required">Please mention the leave-start date</div>
+   </div>
+  </div><br>
+  <div class="form-group">
+    <label for="upto"><b>Leave Upto</b></label>
+    <input required  ngModel name="upto" #upto ="ngModel" (change)="lea(upto)" id="upto" type="date" class="form-control">
+    <div class="alert alert-danger" *ngIf="upto.touched && !upto.valid">
+      <div *ngIf="upto.errors.required">Please mention the leave-end date</div>
+    </div>
+  </div><br>
+  <div class="btn btn-primary">Submit</div>

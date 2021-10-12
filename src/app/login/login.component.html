@@ -1,0 +1,21 @@
+<form action="">
+  <div class="form-group">
+    <label for="logins"><b>Login</b></label>
+    <input required minlength="3" maxlength="25" ngModel name="logins" #logins="ngModel" (change)="chg(logins)" id="firstName" type="text" class="form-control">
+   <div class="alert alert-danger" *ngIf="logins.touched && !logins.valid">
+     <div *ngIf="logins.errors.required">First Name is required</div>
+     <div *ngIf="logins.errors.minlength">First Name should be min 3 characters</div>
+     <div *ngIf="logins.errors.maxlength">First Name should be max of 25 characters</div>
+   </div>
+  </div><br>
+  <div class="form-group">
+    <label for="pass"><b>Password</b></label>
+    <input required minlength="3" maxlength="50"  ngModel name="pass" #pass ="ngModel" (change)="chg(pass)" id="pass" type="text" class="form-control">
+    <div class="alert alert-danger" *ngIf="pass.touched && !pass.valid">
+      <div *ngIf="pass.errors.required">Password is required</div>
+     <div *ngIf="pass.errors.minlength">Password  should have minimum 3 characters</div>
+     <div *ngIf="pass.errors.maxlength">Password should be max of 50 characters</div>
+    </div>
+  </div><br>
+
+
