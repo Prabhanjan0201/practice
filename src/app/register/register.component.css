@@ -23,10 +23,10 @@ body {
   margin-top: 100px
 }
 
-
+.box input[type="text"],
 .box input[type="password"],
-.box input[type="email"]
-{
+.box input[type="email"],
+.box input[type="date"]{
   border: 0;
   background: none;
   display: block;
@@ -52,10 +52,10 @@ body {
   font-weight: 300
 }
 
-
+.box input[type="text"]:focus,
 .box input[type="password"]:focus,
 .box input[type="email"]:focus,
-s {
+.box input[type="date"]:focus {
     width: 300px;
     border-color: #2ecc71
 }
@@ -78,3 +78,5 @@ s {
 .box button[type="submit"]:hover {
   background: #2ecc71
 }
+
+
